@@ -1,0 +1,26 @@
+=============LENGUAJES Y AUTOMATAS II==============
+          (Implementar un compilador)
+
+
+  -U1 Análisis semántico  (Proyecto 80% , Tareas/practicas 20%)
+  -U2 Generación de código intermedio (Proyecto 50% , Examen 40% , Practicas/tareas 10%)
+  -U3 Optimización  (Trabajos 80% , Tareas/practicas 20%)
+  -U4 Generación de código objeto (Proyecto 100%) 
+
+
+
+EJERCICIO PARA LA CREACION DEL PRIMER COMPILADOR (TOY EXAMPLE)
+1.Escribir la gramática en un rachivo con extension ".g", por ejemplo: 
+
+	grammar nombre_archivo;
+                               _________________________________________
+	primera : llamada+;
+	                      _________Sintacticas
+	llamada : 'call' ID ';' ;                              Reglas gramaticales (La gramatica describe la froma correcta de archivo de texto) 
+	       
+	ID: ('a'..'z')('a'..'z'|'0'..'9')* ;
+                                   _________________Lexica
+	WS: (' '|'\n'|'\r'|'\t')+  { $channel = HIDDEN; } ;
+                               _________________________________________
+
+
