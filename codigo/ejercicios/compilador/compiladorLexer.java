@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 compilador.g 2025-09-19 11:01:18
+// $ANTLR 3.5.2 compilador.g 2025-10-01 10:48:21
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -171,8 +171,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = INT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:74:16: ( 'int' )
-			// compilador.g:74:18: 'int'
+			// compilador.g:75:16: ( 'int' )
+			// compilador.g:75:18: 'int'
 			{
 			match("int"); 
 
@@ -192,8 +192,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = DOUBLE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:75:16: ( 'double' )
-			// compilador.g:75:18: 'double'
+			// compilador.g:76:16: ( 'double' )
+			// compilador.g:76:18: 'double'
 			{
 			match("double"); 
 
@@ -213,8 +213,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = STRING;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:76:16: ( 'String' )
-			// compilador.g:76:18: 'String'
+			// compilador.g:77:16: ( 'String' )
+			// compilador.g:77:18: 'String'
 			{
 			match("String"); 
 
@@ -234,8 +234,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = PUBLIC;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:77:16: ( 'public' )
-			// compilador.g:77:18: 'public'
+			// compilador.g:78:16: ( 'public' )
+			// compilador.g:78:18: 'public'
 			{
 			match("public"); 
 
@@ -255,8 +255,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = PRIVATE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:78:16: ( 'private ' )
-			// compilador.g:78:18: 'private '
+			// compilador.g:79:16: ( 'private ' )
+			// compilador.g:79:18: 'private '
 			{
 			match("private "); 
 
@@ -276,8 +276,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = PROTECTED;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:79:16: ( 'protected ' )
-			// compilador.g:79:18: 'protected '
+			// compilador.g:80:16: ( 'protected ' )
+			// compilador.g:80:18: 'protected '
 			{
 			match("protected "); 
 
@@ -297,8 +297,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = OCURLYB;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:80:16: ( '{' )
-			// compilador.g:80:18: '{'
+			// compilador.g:81:16: ( '{' )
+			// compilador.g:81:18: '{'
 			{
 			match('{'); 
 			}
@@ -317,8 +317,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = CCURLYB;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:81:16: ( '}' )
-			// compilador.g:81:18: '}'
+			// compilador.g:82:16: ( '}' )
+			// compilador.g:82:18: '}'
 			{
 			match('}'); 
 			}
@@ -337,8 +337,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = CLASS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:82:16: ( 'class' )
-			// compilador.g:82:18: 'class'
+			// compilador.g:83:16: ( 'class' )
+			// compilador.g:83:18: 'class'
 			{
 			match("class"); 
 
@@ -358,8 +358,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = COMMA;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:84:16: ( ',' )
-			// compilador.g:84:18: ','
+			// compilador.g:85:16: ( ',' )
+			// compilador.g:85:18: ','
 			{
 			match(','); 
 			}
@@ -378,8 +378,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = SEMICOLON;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:85:16: ( ';' )
-			// compilador.g:85:18: ';'
+			// compilador.g:86:16: ( ';' )
+			// compilador.g:86:18: ';'
 			{
 			match(';'); 
 			}
@@ -398,8 +398,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = DOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:86:16: ( '.' )
-			// compilador.g:86:18: '.'
+			// compilador.g:87:16: ( '.' )
+			// compilador.g:87:18: '.'
 			{
 			match('.'); 
 			}
@@ -418,10 +418,10 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = CINT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:87:16: ( ( '0' .. '9' )+ )
-			// compilador.g:87:18: ( '0' .. '9' )+
+			// compilador.g:88:16: ( ( '0' .. '9' )+ )
+			// compilador.g:88:18: ( '0' .. '9' )+
 			{
-			// compilador.g:87:18: ( '0' .. '9' )+
+			// compilador.g:88:18: ( '0' .. '9' )+
 			int cnt1=0;
 			loop1:
 			while (true) {
@@ -470,8 +470,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = CFLOAT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:88:16: ( CINT DOT CINT )
-			// compilador.g:88:18: CINT DOT CINT
+			// compilador.g:89:16: ( CINT DOT CINT )
+			// compilador.g:89:18: CINT DOT CINT
 			{
 			mCINT(); 
 
@@ -495,8 +495,8 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:89:16: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-			// compilador.g:89:18: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// compilador.g:90:16: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+			// compilador.g:90:18: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -506,7 +506,7 @@ public class compiladorLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// compilador.g:89:41: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// compilador.g:90:41: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			loop2:
 			while (true) {
 				int alt2=2;
@@ -551,10 +551,10 @@ public class compiladorLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// compilador.g:90:16: ( ( ' ' | '\\n' | '\\t' | '\\r' )+ )
-			// compilador.g:90:18: ( ' ' | '\\n' | '\\t' | '\\r' )+
+			// compilador.g:91:16: ( ( ' ' | '\\n' | '\\t' | '\\r' )+ )
+			// compilador.g:91:18: ( ' ' | '\\n' | '\\t' | '\\r' )+
 			{
-			// compilador.g:90:18: ( ' ' | '\\n' | '\\t' | '\\r' )+
+			// compilador.g:91:18: ( ' ' | '\\n' | '\\t' | '\\r' )+
 			int cnt3=0;
 			loop3:
 			while (true) {

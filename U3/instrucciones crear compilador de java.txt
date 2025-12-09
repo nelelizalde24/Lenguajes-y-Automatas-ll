@@ -1,0 +1,83 @@
+
+1.- Descargar el ANTLR 4 (antlr-4.13.2-complete.jar) de la página de descargas de ANTLR
+2.- Poner ruta en CLASSPATH al jar de antlr (para que encuentre la librería)
+    para mi fue:  C:\ANTLR4\antlr-4.13.2-complete.jar
+    no olvidar también la ruta a la carpeta actual: "."
+
+3.-Crear gramática, poner la extensión g4
+
+>java org.antlr.v4.Tool MiLenguaje.g4 
+
+4.-Crear Test.java e invocar primera regla de la gramática
+
+/****************************************************************/
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
+
+public class Test {
+    public static void main(String[] args) throws Exception {
+        // Leer código fuente desde un archivo o texto
+        CharStream input = CharStreams.fromFileName("input.txt");
+        // Crear lexer y parser
+        MiLenguajeLexer lexer = new MiLenguajeLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        MiLenguajeParser parser = new MiLenguajeParser(tokens);
+        parser.prog();      
+    }
+}
+/****************************************************************/
+
+5.- Compilar el archivo Test.java
+      >javac Test.java
+
+6.- Crear archivo input.txt, en la misma carpeta, con caso de prueba
+
+x=4+y*23-(x*z);
+(x*z);
+4+y
+
+7.- Correr compilador y observar la salida
+      >java Test 
+
+PARA CREAR UN COMPILADOR DE JAVA
+1.- Bajar de github: 
+
+https://github.com/antlr/grammars-v4/tree/master/java/java
+
+Los archivos: JavaLexer.g4, JavaParser.g4 y JavaParserBase.java (resuelve ambiguegades y contiene superclase del parser)
+
+2.- Generar compiladores, 
+
+>java org.antlr.v4.Tool JavaLexer.g4
+>java org.antlr.v4.Tool JavaParser.g4
+
+3.-Asegurarse que el JavaParserBase.java esté en la misma carpeta donde se generaron los analizadores léxico y sintáctico
+
+4.-Crear el archivo Main.java que invoque los analizadores y llame la primera regla de la gramática
+
+/*******************************************/
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.tree.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+         
+        CharStream input = CharStreams.fromFileName("input.txt");
+ 
+        JavaLexer lexer = new JavaLexer(input);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        JavaParser parser = new JavaParser(tokens);   
+       
+        parser.compilationUnit();
+    }
+}
+
+/*******************************************/
+
+5.- Integrar compiladores a través de la compilación de Main.java
+>javac Main.java
+
+6.- Meter caso de prueba en archivo input.txt
+
+7.- Compilar el caso de prueba
+>java Main

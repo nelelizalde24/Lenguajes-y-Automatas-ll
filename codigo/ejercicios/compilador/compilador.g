@@ -1,9 +1,9 @@
 grammar compilador;
 
-@header  { 
+@header  {
          import java.util.HashMap;
       }
-@members { 
+@members {
          HashMap SymT = new HashMap();
 
          private void pushID(String id, String tipo){
@@ -14,38 +14,41 @@ grammar compilador;
                         if(tipo.compareTo("int")==0)      SymT.put(id,1);
                         else if(tipo.compareTo("double")==0)SymT.put(id,2);
                         else SymT.put(id,3);
-                  
+
                   else System.out.println("ID: "+id+" ya declarado");
          }
+
+
+
       }
 
 program        : classes+ ;
 
-    
 
-classes          : accessmod CLASS ID 
-                                     OCURLYB 
+
+classes          : accessmod CLASS ID
+                                     OCURLYB
                                         member*
                                      CCURLYB ;
 
 
-member         :  method | attributes; 
-attributes     :  accessmod tipo ID (COMMA ID)* SEMICOLON ; //AGREGAR DECLARACIONES DE ATRIBUTO DE CLASES
+member         :  method | attributes;
+attributes     :  accessmod tipo ID (COMMA ID)* SEMICOLON ; //DECLARACIONES DE ATRIBUTO DE CLASES
 
                 //public int metodo (int a int b){}
-method         :  accessmod tipo ID '(' decl_args?  ')'
-                            OCURLYB   sentences*   CCURLYB;
+method         : accessmod tipo ID '(' decl_args?  ')'
+                        OCURLYB   sentences*   CCURLYB { SymT.clear();}  ;
 
                   //int a,b,c ;
 variables_local: tipo id1=ID {pushID($id1.text,$tipo.text);} (COMMA id2=ID {pushID($id2.text,$tipo.text);})* SEMICOLON ;
 
-                //  double x , int a, int b 
+                //  double x , int a, int b
 decl_args      : t1=tipo id1=ID {pushID($id1.text,$t1.text);} (COMMA t2=tipo id2=ID {pushID($id2.text,$t2.text);})*;
 
 sentences      :  asignacion | variables_local ; //TAREA AGREGAR DECLARACION DE VARIABLES LOCALES
 asignacion     :  ID  '=' expr SEMICOLON ;
 
-expr  returns [int vType ]         
+expr  returns [int vType ]
                :  m1=multExpr {$vType=$m1.vType;}
                 (('+'|'-') m2=multExpr
                 {
@@ -55,18 +58,18 @@ expr  returns [int vType ]
 
                               //atomo('*' atomo)*
 multExpr returns [int vType ]
-               :  a1=atomo{$vType=$a1.vType;} 
+               :  a1=atomo{$vType=$a1.vType;}
                ('*' a2=atomo
                {
                   if($a1.vType != $a2.vType) $vType=3;
                }
-               
+
                )*;
 
-atomo returns [int vType ]   
+atomo returns [int vType ]
                :  CINT { $vType=1; }
                |  CFLOAT { $vType=2; }
-               |  ID {/*buscar en la tabla de simbolos*/}
+               |  ID { $vType=getSymbolType($ID.text);}
                |  '(' expr ')' { $vType=$expr.vType; } ; 
 
 tipo           : INT | DOUBLE | STRING ;

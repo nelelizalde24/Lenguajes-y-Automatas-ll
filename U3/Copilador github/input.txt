@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+public class EstructurasJava {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+
+        do {
+            System.out.println("\n========= MENÚ =========");
+            System.out.println("1. IF");
+            System.out.println("2. FOR");
+            System.out.println("3. WHILE");
+            System.out.println("4. DO-WHILE");
+            System.out.println("5. SWITCH");
+            System.out.println("6. Salir");
+            System.out.print("Elige una opción: ");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("\n--- Ejemplo de IF ---");
+                    System.out.print("Ingresa un número: ");
+                    int n = sc.nextInt();
+                    if (n > 0) {
+                        System.out.println("El número es positivo");
+                    } else if (n < 0) {
+                        System.out.println("El número es negativo");
+                    } else {
+                        System.out.println("El número es cero");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("\n--- Ejemplo de FOR ---");
+                    System.out.print("Contar hasta: ");
+                    int limiteFor = sc.nextInt();
+                    for (int i = 1; i <= limiteFor; i++) {
+                        System.out.println("Número: " + i);
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("\n--- Ejemplo de WHILE ---");
+                    System.out.print("Ingresa un número para contar hacia arriba hasta 5: ");
+                    int w = sc.nextInt();
+                    while (w <= 5) {
+                        System.out.println("Valor: " + w);
+                        w++;
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("\n--- Ejemplo de DO-WHILE ---");
+                    int d;
+                    do {
+                        System.out.print("Ingresa un número (0 para salir): ");
+                        d = sc.nextInt();
+                        System.out.println("Ingresaste: " + d);
+                    } while (d != 0);
+                    break;
+
+                case 5:
+                    System.out.println("\n--- Ejemplo de SWITCH ---");
+                    System.out.print("Ingresa un día de la semana (1-7): ");
+                    int dia = sc.nextInt();
+                    switch (dia) {
+                        case 1: System.out.println("Lunes"); break;
+                        case 2: System.out.println("Martes"); break;
+                        case 3: System.out.println("Miércoles"); break;
+                        case 4: System.out.println("Jueves"); break;
+                        case 5: System.out.println("Viernes"); break;
+                        case 6: System.out.println("Sábado"); break;
+                        case 7: System.out.println("Domingo"); break;
+                        default: System.out.println("Número inválido"); break;
+                    }
+                    break;
+
+                case 6:
+                    System.out.println("Saliendo del programa...");
+                    break;
+
+                default:
+                    System.out.println("Opción no válida.");
+                    break;
+            }
+
+        } while (opcion != 6);
+
+        sc.close();
+    }
+}

@@ -1,0 +1,69 @@
+int main ()
+{
+  int D.4314;
+
+  {
+    int numero;
+    int i;
+    char repetir;
+
+    try
+      {
+        <D.4308>:
+        printf ("Ingrese un numero entero positivo: ");
+        scanf ("%d", &numero);
+        numero.0_1 = numero;
+        numero.1_2 = (unsigned int) numero.0_1;
+        _3 = numero.1_2 & 1;
+        if (_3 == 0) goto <D.4310>; else goto <D.4311>;
+        <D.4310>:
+        printf ("El numero es par.\n");
+        goto <D.4312>;
+        <D.4311>:
+        printf ("El numero es impar.\n");
+        <D.4312>:
+        numero.2_4 = numero;
+        printf ("Contando del 1 al %d:\n", numero.2_4);
+        i = 1;
+        goto <D.4304>;
+        <D.4303>:
+        printf ("%d ", i);
+        i = i + 1;
+        <D.4304>:
+        numero.3_5 = numero;
+        if (i <= numero.3_5) goto <D.4303>; else goto <D.4301>;
+        <D.4301>:
+        printf ("\n");
+        numero.4_6 = numero;
+        printf ("Cuenta regresiva desde %d:\n", numero.4_6);
+        i = numero;
+        goto <D.4306>;
+        <D.4307>:
+        printf ("%d ", i);
+        i = i + -1;
+        <D.4306>:
+        if (i > 0) goto <D.4307>; else goto <D.4305>;
+        <D.4305>:
+        printf ("\n");
+        printf ("\xc2\xbfDesea ingresar otro numero? (s/n): ");
+        scanf (" %c", &repetir);
+        repetir.5_7 = repetir;
+        if (repetir.5_7 == 115) goto <D.4308>; else goto <D.4313>;
+        <D.4313>:
+        repetir.6_8 = repetir;
+        if (repetir.6_8 == 83) goto <D.4308>; else goto <D.4299>;
+        <D.4299>:
+        D.4314 = 0;
+        return D.4314;
+      }
+    finally
+      {
+        numero = {CLOBBER(eos)};
+        repetir = {CLOBBER(eos)};
+      }
+  }
+  D.4314 = 0;
+  return D.4314;
+}
+
+

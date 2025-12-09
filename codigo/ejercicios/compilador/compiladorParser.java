@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 compilador.g 2025-09-19 11:01:18
+// $ANTLR 3.5.2 compilador.g 2025-10-01 10:48:21
  
          import java.util.HashMap;
       
@@ -69,7 +69,7 @@ public class compiladorParser extends Parser {
 	                        if(tipo.compareTo("int")==0)      SymT.put(id,1);
 	                        else if(tipo.compareTo("double")==0)SymT.put(id,2);
 	                        else SymT.put(id,3);
-	                  
+	                     
 	                  else System.out.println("ID: "+id+" ya declarado");
 	         }
 	      
@@ -347,19 +347,20 @@ public class compiladorParser extends Parser {
 	public final void method() throws RecognitionException {
 		try {
 			// compilador.g:36:16: ( accessmod tipo ID '(' ( decl_args )? ')' OCURLYB ( sentences )* CCURLYB )
-			// compilador.g:36:19: accessmod tipo ID '(' ( decl_args )? ')' OCURLYB ( sentences )* CCURLYB
+			// compilador.g:36:18: accessmod tipo ID '(' ( decl_args )? ')' OCURLYB ( sentences )* CCURLYB
 			{
-			pushFollow(FOLLOW_accessmod_in_method266);
+			 SymT.clear();
+			pushFollow(FOLLOW_accessmod_in_method295);
 			accessmod();
 			state._fsp--;
 
-			pushFollow(FOLLOW_tipo_in_method268);
+			pushFollow(FOLLOW_tipo_in_method297);
 			tipo();
 			state._fsp--;
 
-			match(input,ID,FOLLOW_ID_in_method270); 
-			match(input,20,FOLLOW_20_in_method272); 
-			// compilador.g:36:41: ( decl_args )?
+			match(input,ID,FOLLOW_ID_in_method299); 
+			match(input,20,FOLLOW_20_in_method301); 
+			// compilador.g:37:50: ( decl_args )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0==DOUBLE||LA5_0==INT||LA5_0==STRING) ) {
@@ -367,9 +368,9 @@ public class compiladorParser extends Parser {
 			}
 			switch (alt5) {
 				case 1 :
-					// compilador.g:36:41: decl_args
+					// compilador.g:37:50: decl_args
 					{
-					pushFollow(FOLLOW_decl_args_in_method274);
+					pushFollow(FOLLOW_decl_args_in_method303);
 					decl_args();
 					state._fsp--;
 
@@ -378,9 +379,9 @@ public class compiladorParser extends Parser {
 
 			}
 
-			match(input,21,FOLLOW_21_in_method278); 
-			match(input,OCURLYB,FOLLOW_OCURLYB_in_method308); 
-			// compilador.g:37:39: ( sentences )*
+			match(input,21,FOLLOW_21_in_method307); 
+			match(input,OCURLYB,FOLLOW_OCURLYB_in_method337); 
+			// compilador.g:38:39: ( sentences )*
 			loop6:
 			while (true) {
 				int alt6=2;
@@ -391,9 +392,9 @@ public class compiladorParser extends Parser {
 
 				switch (alt6) {
 				case 1 :
-					// compilador.g:37:39: sentences
+					// compilador.g:38:39: sentences
 					{
-					pushFollow(FOLLOW_sentences_in_method312);
+					pushFollow(FOLLOW_sentences_in_method341);
 					sentences();
 					state._fsp--;
 
@@ -405,7 +406,7 @@ public class compiladorParser extends Parser {
 				}
 			}
 
-			match(input,CCURLYB,FOLLOW_CCURLYB_in_method317); 
+			match(input,CCURLYB,FOLLOW_CCURLYB_in_method346); 
 			}
 
 		}
@@ -422,23 +423,23 @@ public class compiladorParser extends Parser {
 
 
 	// $ANTLR start "variables_local"
-	// compilador.g:40:1: variables_local : tipo id1= ID ( COMMA id2= ID )* SEMICOLON ;
+	// compilador.g:41:1: variables_local : tipo id1= ID ( COMMA id2= ID )* SEMICOLON ;
 	public final void variables_local() throws RecognitionException {
 		Token id1=null;
 		Token id2=null;
 		ParserRuleReturnScope tipo1 =null;
 
 		try {
-			// compilador.g:40:16: ( tipo id1= ID ( COMMA id2= ID )* SEMICOLON )
-			// compilador.g:40:18: tipo id1= ID ( COMMA id2= ID )* SEMICOLON
+			// compilador.g:41:16: ( tipo id1= ID ( COMMA id2= ID )* SEMICOLON )
+			// compilador.g:41:18: tipo id1= ID ( COMMA id2= ID )* SEMICOLON
 			{
-			pushFollow(FOLLOW_tipo_in_variables_local343);
+			pushFollow(FOLLOW_tipo_in_variables_local372);
 			tipo1=tipo();
 			state._fsp--;
 
-			id1=(Token)match(input,ID,FOLLOW_ID_in_variables_local347); 
+			id1=(Token)match(input,ID,FOLLOW_ID_in_variables_local376); 
 			pushID((id1!=null?id1.getText():null),(tipo1!=null?input.toString(tipo1.start,tipo1.stop):null));
-			// compilador.g:40:62: ( COMMA id2= ID )*
+			// compilador.g:41:62: ( COMMA id2= ID )*
 			loop7:
 			while (true) {
 				int alt7=2;
@@ -449,10 +450,10 @@ public class compiladorParser extends Parser {
 
 				switch (alt7) {
 				case 1 :
-					// compilador.g:40:63: COMMA id2= ID
+					// compilador.g:41:63: COMMA id2= ID
 					{
-					match(input,COMMA,FOLLOW_COMMA_in_variables_local352); 
-					id2=(Token)match(input,ID,FOLLOW_ID_in_variables_local356); 
+					match(input,COMMA,FOLLOW_COMMA_in_variables_local381); 
+					id2=(Token)match(input,ID,FOLLOW_ID_in_variables_local385); 
 					pushID((id2!=null?id2.getText():null),(tipo1!=null?input.toString(tipo1.start,tipo1.stop):null));
 					}
 					break;
@@ -462,7 +463,7 @@ public class compiladorParser extends Parser {
 				}
 			}
 
-			match(input,SEMICOLON,FOLLOW_SEMICOLON_in_variables_local362); 
+			match(input,SEMICOLON,FOLLOW_SEMICOLON_in_variables_local391); 
 			}
 
 		}
@@ -479,7 +480,7 @@ public class compiladorParser extends Parser {
 
 
 	// $ANTLR start "decl_args"
-	// compilador.g:43:1: decl_args : t1= tipo id1= ID ( COMMA t2= tipo id2= ID )* ;
+	// compilador.g:44:1: decl_args : t1= tipo id1= ID ( COMMA t2= tipo id2= ID )* ;
 	public final void decl_args() throws RecognitionException {
 		Token id1=null;
 		Token id2=null;
@@ -487,16 +488,16 @@ public class compiladorParser extends Parser {
 		ParserRuleReturnScope t2 =null;
 
 		try {
-			// compilador.g:43:16: (t1= tipo id1= ID ( COMMA t2= tipo id2= ID )* )
-			// compilador.g:43:18: t1= tipo id1= ID ( COMMA t2= tipo id2= ID )*
+			// compilador.g:44:16: (t1= tipo id1= ID ( COMMA t2= tipo id2= ID )* )
+			// compilador.g:44:18: t1= tipo id1= ID ( COMMA t2= tipo id2= ID )*
 			{
-			pushFollow(FOLLOW_tipo_in_decl_args395);
+			pushFollow(FOLLOW_tipo_in_decl_args424);
 			t1=tipo();
 			state._fsp--;
 
-			id1=(Token)match(input,ID,FOLLOW_ID_in_decl_args399); 
+			id1=(Token)match(input,ID,FOLLOW_ID_in_decl_args428); 
 			pushID((id1!=null?id1.getText():null),(t1!=null?input.toString(t1.start,t1.stop):null));
-			// compilador.g:43:63: ( COMMA t2= tipo id2= ID )*
+			// compilador.g:44:63: ( COMMA t2= tipo id2= ID )*
 			loop8:
 			while (true) {
 				int alt8=2;
@@ -507,14 +508,14 @@ public class compiladorParser extends Parser {
 
 				switch (alt8) {
 				case 1 :
-					// compilador.g:43:64: COMMA t2= tipo id2= ID
+					// compilador.g:44:64: COMMA t2= tipo id2= ID
 					{
-					match(input,COMMA,FOLLOW_COMMA_in_decl_args404); 
-					pushFollow(FOLLOW_tipo_in_decl_args408);
+					match(input,COMMA,FOLLOW_COMMA_in_decl_args433); 
+					pushFollow(FOLLOW_tipo_in_decl_args437);
 					t2=tipo();
 					state._fsp--;
 
-					id2=(Token)match(input,ID,FOLLOW_ID_in_decl_args412); 
+					id2=(Token)match(input,ID,FOLLOW_ID_in_decl_args441); 
 					pushID((id2!=null?id2.getText():null),(t2!=null?input.toString(t2.start,t2.stop):null));
 					}
 					break;
@@ -540,10 +541,10 @@ public class compiladorParser extends Parser {
 
 
 	// $ANTLR start "sentences"
-	// compilador.g:45:1: sentences : ( asignacion | variables_local );
+	// compilador.g:46:1: sentences : ( asignacion | variables_local );
 	public final void sentences() throws RecognitionException {
 		try {
-			// compilador.g:45:16: ( asignacion | variables_local )
+			// compilador.g:46:16: ( asignacion | variables_local )
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==ID) ) {
@@ -561,18 +562,18 @@ public class compiladorParser extends Parser {
 
 			switch (alt9) {
 				case 1 :
-					// compilador.g:45:19: asignacion
+					// compilador.g:46:19: asignacion
 					{
-					pushFollow(FOLLOW_asignacion_in_sentences430);
+					pushFollow(FOLLOW_asignacion_in_sentences459);
 					asignacion();
 					state._fsp--;
 
 					}
 					break;
 				case 2 :
-					// compilador.g:45:32: variables_local
+					// compilador.g:46:32: variables_local
 					{
-					pushFollow(FOLLOW_variables_local_in_sentences434);
+					pushFollow(FOLLOW_variables_local_in_sentences463);
 					variables_local();
 					state._fsp--;
 
@@ -594,19 +595,19 @@ public class compiladorParser extends Parser {
 
 
 	// $ANTLR start "asignacion"
-	// compilador.g:46:1: asignacion : ID '=' expr SEMICOLON ;
+	// compilador.g:47:1: asignacion : ID '=' expr SEMICOLON ;
 	public final void asignacion() throws RecognitionException {
 		try {
-			// compilador.g:46:16: ( ID '=' expr SEMICOLON )
-			// compilador.g:46:19: ID '=' expr SEMICOLON
+			// compilador.g:47:16: ( ID '=' expr SEMICOLON )
+			// compilador.g:47:19: ID '=' expr SEMICOLON
 			{
-			match(input,ID,FOLLOW_ID_in_asignacion448); 
-			match(input,25,FOLLOW_25_in_asignacion451); 
-			pushFollow(FOLLOW_expr_in_asignacion453);
+			match(input,ID,FOLLOW_ID_in_asignacion477); 
+			match(input,25,FOLLOW_25_in_asignacion480); 
+			pushFollow(FOLLOW_expr_in_asignacion482);
 			expr();
 			state._fsp--;
 
-			match(input,SEMICOLON,FOLLOW_SEMICOLON_in_asignacion455); 
+			match(input,SEMICOLON,FOLLOW_SEMICOLON_in_asignacion484); 
 			}
 
 		}
@@ -623,7 +624,7 @@ public class compiladorParser extends Parser {
 
 
 	// $ANTLR start "expr"
-	// compilador.g:48:1: expr returns [int vType ] : m1= multExpr ( ( '+' | '-' ) m2= multExpr )* ;
+	// compilador.g:49:1: expr returns [int vType ] : m1= multExpr ( ( '+' | '-' ) m2= multExpr )* ;
 	public final int expr() throws RecognitionException {
 		int vType = 0;
 
@@ -632,15 +633,15 @@ public class compiladorParser extends Parser {
 		int m2 =0;
 
 		try {
-			// compilador.g:49:16: (m1= multExpr ( ( '+' | '-' ) m2= multExpr )* )
-			// compilador.g:49:19: m1= multExpr ( ( '+' | '-' ) m2= multExpr )*
+			// compilador.g:50:16: (m1= multExpr ( ( '+' | '-' ) m2= multExpr )* )
+			// compilador.g:50:19: m1= multExpr ( ( '+' | '-' ) m2= multExpr )*
 			{
-			pushFollow(FOLLOW_multExpr_in_expr496);
+			pushFollow(FOLLOW_multExpr_in_expr525);
 			m1=multExpr();
 			state._fsp--;
 
 			vType =m1;
-			// compilador.g:50:17: ( ( '+' | '-' ) m2= multExpr )*
+			// compilador.g:51:17: ( ( '+' | '-' ) m2= multExpr )*
 			loop10:
 			while (true) {
 				int alt10=2;
@@ -651,7 +652,7 @@ public class compiladorParser extends Parser {
 
 				switch (alt10) {
 				case 1 :
-					// compilador.g:50:18: ( '+' | '-' ) m2= multExpr
+					// compilador.g:51:18: ( '+' | '-' ) m2= multExpr
 					{
 					if ( (input.LA(1) >= 23 && input.LA(1) <= 24) ) {
 						input.consume();
@@ -661,7 +662,7 @@ public class compiladorParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_multExpr_in_expr525);
+					pushFollow(FOLLOW_multExpr_in_expr554);
 					m2=multExpr();
 					state._fsp--;
 
@@ -693,7 +694,7 @@ public class compiladorParser extends Parser {
 
 
 	// $ANTLR start "multExpr"
-	// compilador.g:57:1: multExpr returns [int vType ] : a1= atomo ( '*' a2= atomo )* ;
+	// compilador.g:58:1: multExpr returns [int vType ] : a1= atomo ( '*' a2= atomo )* ;
 	public final int multExpr() throws RecognitionException {
 		int vType = 0;
 
@@ -702,15 +703,15 @@ public class compiladorParser extends Parser {
 		int a2 =0;
 
 		try {
-			// compilador.g:58:16: (a1= atomo ( '*' a2= atomo )* )
-			// compilador.g:58:19: a1= atomo ( '*' a2= atomo )*
+			// compilador.g:59:16: (a1= atomo ( '*' a2= atomo )* )
+			// compilador.g:59:19: a1= atomo ( '*' a2= atomo )*
 			{
-			pushFollow(FOLLOW_atomo_in_multExpr623);
+			pushFollow(FOLLOW_atomo_in_multExpr652);
 			a1=atomo();
 			state._fsp--;
 
 			vType =a1;
-			// compilador.g:59:16: ( '*' a2= atomo )*
+			// compilador.g:60:16: ( '*' a2= atomo )*
 			loop11:
 			while (true) {
 				int alt11=2;
@@ -721,10 +722,10 @@ public class compiladorParser extends Parser {
 
 				switch (alt11) {
 				case 1 :
-					// compilador.g:59:17: '*' a2= atomo
+					// compilador.g:60:17: '*' a2= atomo
 					{
-					match(input,22,FOLLOW_22_in_multExpr643); 
-					pushFollow(FOLLOW_atomo_in_multExpr647);
+					match(input,22,FOLLOW_22_in_multExpr672); 
+					pushFollow(FOLLOW_atomo_in_multExpr676);
 					a2=atomo();
 					state._fsp--;
 
@@ -756,7 +757,7 @@ public class compiladorParser extends Parser {
 
 
 	// $ANTLR start "atomo"
-	// compilador.g:66:1: atomo returns [int vType ] : ( CINT | CFLOAT | ID | '(' expr ')' );
+	// compilador.g:67:1: atomo returns [int vType ] : ( CINT | CFLOAT | ID | '(' expr ')' );
 	public final int atomo() throws RecognitionException {
 		int vType = 0;
 
@@ -764,7 +765,7 @@ public class compiladorParser extends Parser {
 		int expr2 =0;
 
 		try {
-			// compilador.g:67:16: ( CINT | CFLOAT | ID | '(' expr ')' )
+			// compilador.g:68:16: ( CINT | CFLOAT | ID | '(' expr ')' )
 			int alt12=4;
 			switch ( input.LA(1) ) {
 			case CINT:
@@ -794,35 +795,35 @@ public class compiladorParser extends Parser {
 			}
 			switch (alt12) {
 				case 1 :
-					// compilador.g:67:19: CINT
+					// compilador.g:68:19: CINT
 					{
-					match(input,CINT,FOLLOW_CINT_in_atomo729); 
+					match(input,CINT,FOLLOW_CINT_in_atomo758); 
 					 vType =1; 
 					}
 					break;
 				case 2 :
-					// compilador.g:68:19: CFLOAT
+					// compilador.g:69:19: CFLOAT
 					{
-					match(input,CFLOAT,FOLLOW_CFLOAT_in_atomo751); 
+					match(input,CFLOAT,FOLLOW_CFLOAT_in_atomo780); 
 					 vType =2; 
 					}
 					break;
 				case 3 :
-					// compilador.g:69:19: ID
+					// compilador.g:70:19: ID
 					{
-					match(input,ID,FOLLOW_ID_in_atomo773); 
+					match(input,ID,FOLLOW_ID_in_atomo802); 
 					/*buscar en la tabla de simbolos*/
 					}
 					break;
 				case 4 :
-					// compilador.g:70:19: '(' expr ')'
+					// compilador.g:71:19: '(' expr ')'
 					{
-					match(input,20,FOLLOW_20_in_atomo795); 
-					pushFollow(FOLLOW_expr_in_atomo797);
+					match(input,20,FOLLOW_20_in_atomo824); 
+					pushFollow(FOLLOW_expr_in_atomo826);
 					expr2=expr();
 					state._fsp--;
 
-					match(input,21,FOLLOW_21_in_atomo799); 
+					match(input,21,FOLLOW_21_in_atomo828); 
 					 vType =expr2; 
 					}
 					break;
@@ -846,13 +847,13 @@ public class compiladorParser extends Parser {
 
 
 	// $ANTLR start "tipo"
-	// compilador.g:72:1: tipo : ( INT | DOUBLE | STRING );
+	// compilador.g:73:1: tipo : ( INT | DOUBLE | STRING );
 	public final compiladorParser.tipo_return tipo() throws RecognitionException {
 		compiladorParser.tipo_return retval = new compiladorParser.tipo_return();
 		retval.start = input.LT(1);
 
 		try {
-			// compilador.g:72:16: ( INT | DOUBLE | STRING )
+			// compilador.g:73:16: ( INT | DOUBLE | STRING )
 			// compilador.g:
 			{
 			if ( input.LA(1)==DOUBLE||input.LA(1)==INT||input.LA(1)==STRING ) {
@@ -882,10 +883,10 @@ public class compiladorParser extends Parser {
 
 
 	// $ANTLR start "accessmod"
-	// compilador.g:73:1: accessmod : ( PUBLIC | PRIVATE | PROTECTED );
+	// compilador.g:74:1: accessmod : ( PUBLIC | PRIVATE | PROTECTED );
 	public final void accessmod() throws RecognitionException {
 		try {
-			// compilador.g:73:16: ( PUBLIC | PRIVATE | PROTECTED )
+			// compilador.g:74:16: ( PUBLIC | PRIVATE | PROTECTED )
 			// compilador.g:
 			{
 			if ( (input.LA(1) >= PRIVATE && input.LA(1) <= PUBLIC) ) {
@@ -928,41 +929,41 @@ public class compiladorParser extends Parser {
 	public static final BitSet FOLLOW_COMMA_in_attributes224 = new BitSet(new long[]{0x0000000000000800L});
 	public static final BitSet FOLLOW_ID_in_attributes226 = new BitSet(new long[]{0x0000000000020100L});
 	public static final BitSet FOLLOW_SEMICOLON_in_attributes230 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_accessmod_in_method266 = new BitSet(new long[]{0x0000000000041400L});
-	public static final BitSet FOLLOW_tipo_in_method268 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_ID_in_method270 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_20_in_method272 = new BitSet(new long[]{0x0000000000241400L});
-	public static final BitSet FOLLOW_decl_args_in_method274 = new BitSet(new long[]{0x0000000000200000L});
-	public static final BitSet FOLLOW_21_in_method278 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_OCURLYB_in_method308 = new BitSet(new long[]{0x0000000000041C10L});
-	public static final BitSet FOLLOW_sentences_in_method312 = new BitSet(new long[]{0x0000000000041C10L});
-	public static final BitSet FOLLOW_CCURLYB_in_method317 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_tipo_in_variables_local343 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_ID_in_variables_local347 = new BitSet(new long[]{0x0000000000020100L});
-	public static final BitSet FOLLOW_COMMA_in_variables_local352 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_ID_in_variables_local356 = new BitSet(new long[]{0x0000000000020100L});
-	public static final BitSet FOLLOW_SEMICOLON_in_variables_local362 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_tipo_in_decl_args395 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_ID_in_decl_args399 = new BitSet(new long[]{0x0000000000000102L});
-	public static final BitSet FOLLOW_COMMA_in_decl_args404 = new BitSet(new long[]{0x0000000000041400L});
-	public static final BitSet FOLLOW_tipo_in_decl_args408 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_ID_in_decl_args412 = new BitSet(new long[]{0x0000000000000102L});
-	public static final BitSet FOLLOW_asignacion_in_sentences430 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_variables_local_in_sentences434 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_asignacion448 = new BitSet(new long[]{0x0000000002000000L});
-	public static final BitSet FOLLOW_25_in_asignacion451 = new BitSet(new long[]{0x0000000000100860L});
-	public static final BitSet FOLLOW_expr_in_asignacion453 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_SEMICOLON_in_asignacion455 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_multExpr_in_expr496 = new BitSet(new long[]{0x0000000001800002L});
-	public static final BitSet FOLLOW_set_in_expr517 = new BitSet(new long[]{0x0000000000100860L});
+	public static final BitSet FOLLOW_accessmod_in_method295 = new BitSet(new long[]{0x0000000000041400L});
+	public static final BitSet FOLLOW_tipo_in_method297 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_ID_in_method299 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_20_in_method301 = new BitSet(new long[]{0x0000000000241400L});
+	public static final BitSet FOLLOW_decl_args_in_method303 = new BitSet(new long[]{0x0000000000200000L});
+	public static final BitSet FOLLOW_21_in_method307 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_OCURLYB_in_method337 = new BitSet(new long[]{0x0000000000041C10L});
+	public static final BitSet FOLLOW_sentences_in_method341 = new BitSet(new long[]{0x0000000000041C10L});
+	public static final BitSet FOLLOW_CCURLYB_in_method346 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_tipo_in_variables_local372 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_ID_in_variables_local376 = new BitSet(new long[]{0x0000000000020100L});
+	public static final BitSet FOLLOW_COMMA_in_variables_local381 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_ID_in_variables_local385 = new BitSet(new long[]{0x0000000000020100L});
+	public static final BitSet FOLLOW_SEMICOLON_in_variables_local391 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_tipo_in_decl_args424 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_ID_in_decl_args428 = new BitSet(new long[]{0x0000000000000102L});
+	public static final BitSet FOLLOW_COMMA_in_decl_args433 = new BitSet(new long[]{0x0000000000041400L});
+	public static final BitSet FOLLOW_tipo_in_decl_args437 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_ID_in_decl_args441 = new BitSet(new long[]{0x0000000000000102L});
+	public static final BitSet FOLLOW_asignacion_in_sentences459 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_variables_local_in_sentences463 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_asignacion477 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_25_in_asignacion480 = new BitSet(new long[]{0x0000000000100860L});
+	public static final BitSet FOLLOW_expr_in_asignacion482 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_SEMICOLON_in_asignacion484 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_multExpr_in_expr525 = new BitSet(new long[]{0x0000000001800002L});
-	public static final BitSet FOLLOW_atomo_in_multExpr623 = new BitSet(new long[]{0x0000000000400002L});
-	public static final BitSet FOLLOW_22_in_multExpr643 = new BitSet(new long[]{0x0000000000100860L});
-	public static final BitSet FOLLOW_atomo_in_multExpr647 = new BitSet(new long[]{0x0000000000400002L});
-	public static final BitSet FOLLOW_CINT_in_atomo729 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CFLOAT_in_atomo751 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_atomo773 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_20_in_atomo795 = new BitSet(new long[]{0x0000000000100860L});
-	public static final BitSet FOLLOW_expr_in_atomo797 = new BitSet(new long[]{0x0000000000200000L});
-	public static final BitSet FOLLOW_21_in_atomo799 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_set_in_expr546 = new BitSet(new long[]{0x0000000000100860L});
+	public static final BitSet FOLLOW_multExpr_in_expr554 = new BitSet(new long[]{0x0000000001800002L});
+	public static final BitSet FOLLOW_atomo_in_multExpr652 = new BitSet(new long[]{0x0000000000400002L});
+	public static final BitSet FOLLOW_22_in_multExpr672 = new BitSet(new long[]{0x0000000000100860L});
+	public static final BitSet FOLLOW_atomo_in_multExpr676 = new BitSet(new long[]{0x0000000000400002L});
+	public static final BitSet FOLLOW_CINT_in_atomo758 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CFLOAT_in_atomo780 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_atomo802 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_20_in_atomo824 = new BitSet(new long[]{0x0000000000100860L});
+	public static final BitSet FOLLOW_expr_in_atomo826 = new BitSet(new long[]{0x0000000000200000L});
+	public static final BitSet FOLLOW_21_in_atomo828 = new BitSet(new long[]{0x0000000000000002L});
 }
