@@ -1,0 +1,36 @@
+PROMPT1
+
+Genera un programa en java, el cual debe llenar un arreglo de enteros con 200 valores enteros aleatorios. Los valores aleatorios deben estar en el rango de 1 a 1000. El programa debe imprimir los 200 valores en consola, clcular la moda e imprimirla, calcular la mediana e imprimirla, calcular la media e imprimirla. El programa generado debe estar contenido en un solo archivo con nombre Prompt1.java
+
+Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. The program should print the 200 values to the console, calculate and print the mode, calculate and print the median, and calculate and print the mean. The generated program must be contained in a single file named Prompt1.java
+
+
+
+**********************************************************************************
+PROMPT2
+
+Genera un programa en java, el cual debe llenar un arreglo de enteros con 200 valores enteros aleatorios. Los valores aleatorios deben estar en el rango de 1 a 1000. Ordena el arreglo empleando el método quicksort e imprimir el arreglo ordenado. El programa generado debe estar contenido en un solo archivo con nombre Prompt2.java
+
+Write a Java program that fills an array of integers with 200 random integer values. The random values must be in the range of 1 to 1000. Sort the array using the quicksort method and print the sorted array. The generated program must be contained in a single file named Prompt2.java
+
+***********************************************************************************
+PROMPT3
+
+Genera un programa en java, para implementar un CRUD de empleados. Cada empleado debe tener un número de identificador entero, un nombre, un salario, una dirección, un correo electrónico y un  teléfono. El programa generado debe construir un menú de opciones por consola para que el usuario pueda escoger la opción deseda. El programa debe usar un archivo binario de nombre data.dat para almacenar la información de los empleados. El programa generado debe estar contenido en un solo archivo con nombre Prompt3.java
+
+Create a Java program to implement a CRUD (Create, Read, Update, Delete) function for employees. Each employee must have an integer identifier, a name, a salary, an address, an email address, and a phone number. The program should display a console menu so the user can select the desired option. The program should use a binary file named data.dat to store the employee information. The entire program must be contained in a single file named Prompt3.java.
+
+
+**********************************************************************************
+PROMPT4
+
+Genera un programa en java, que construya una aplicación empleando una ventana de windows con la librería de componentes visuales Swing. La aplicación debe mostrar una animación de un círculo rojo rebotando dentro de un rectángulo blanco. El rectángulo debe estar centrado en la ventana de windows. El programa generado debe estar contenido en un solo archivo con nombre Prompt4.java
+
+Create a Java program that builds an application using a Windows window with the Swing visual component library. The application should display an animation of a red circle bouncing inside a white rectangle. The rectangle should be centered within the Windows window. The generated program should be contained in a single file named Prompt4.java.
+
+*******************************************************************************
+PROMPT5
+
+Genera un programa en java, que construya una matriz cuadrada de enteros, de 50 renglones y 50 columnas, que llene dicha matriz con valores aleatorios enteros entre 1 y 1000. A partir de dicha matriz debe generar su  transpuesta e imprimirla. Calcular su traza e imprimirla, construir su determinante e imprimirlo. El programa generado debe estar contenido en un solo archivo con nombre Prompt5.java
+
+Write a Java program that creates a square matrix of integers, with 50 rows and 50 columns, and fills it with random integer values between 1 and 1000. Then, generate and print the transpose of this matrix, calculate and print its trace, and calculate and print its determinant. The entire program must be contained in a single file named Prompt5.java.
